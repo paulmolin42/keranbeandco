@@ -1,0 +1,9 @@
+---
+- hosts: all
+  sudo: true
+  roles:
+    - nodejs
+    - mongodb
+    - git
+    - gcc
+    - node-modules
