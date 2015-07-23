@@ -5,3 +5,8 @@ angular.module 'keranbeandco.common'
     url: '/'
     controller: 'home'
     templateUrl: 'common/views/home.html'
+
+  .state 'news',
+    url: '/news'
+    controller: 'news'
+    templateUrl: 'common/views/news.html'

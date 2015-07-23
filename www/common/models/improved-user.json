@@ -14,7 +14,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "news": {
+      "type": "hasMany",
+      "model": "News",
+      "foreignKey": ""
+    }
+  },
   "acls": [
     {
       "accessType": "EXECUTE",

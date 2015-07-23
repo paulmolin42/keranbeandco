@@ -1,0 +1,4 @@
+h2 Les news
+div(ng-repeat="news in allNews")
+   div {{ news.body }}
+   div par {{ news.improvedUser.firstName }} {{ news.improvedUser.lastName }} le {{ news.sentAt | date:'medium' }}

@@ -1,0 +1,29 @@
+{
+  "name": "News",
+  "plural": "News",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "body": {
+      "type": "string",
+      "required": true
+    },
+    "sentAt": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "improvedUser": {
+      "type": "belongsTo",
+      "model": "ImprovedUser",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": []
+}
