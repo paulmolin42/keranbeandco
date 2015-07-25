@@ -1,9 +1,9 @@
 h2 Les news
 h3
-  md-button.md-primary(ng-if="!isAddNewsFormOpen", aria-label="Open form for adding a news")
-    i.fa.fa-plus.fa-5x(ng-click="toggleAddNewsForm()")
-  md-button.md-warn(ng-if="isAddNewsFormOpen", aria-label="Close form for adding a news")
-    i.fa.fa-times.fa-5x(ng-click="toggleAddNewsForm()")
+  md-button.md-primary(aria-label="Open form for adding a news", ng-if="!isAddNewsFormOpen", ng-click="toggleAddNewsForm()")
+    i.fa.fa-plus.fa-5x()
+  md-button.md-warn(aria-label="Close form for adding a news", ng-if="isAddNewsFormOpen", ng-click="toggleAddNewsForm()")
+    i.fa.fa-times.fa-5x
 form(ng-if="isAddNewsFormOpen")
   md-input-container
     label Contenu
