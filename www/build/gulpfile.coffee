@@ -31,9 +31,15 @@ gulp.task 'default', ['build']
 gulp.task 'build', (done) ->
   runSequence ['copy', 'compile'], 'lb-services', done
 
-gulp.task 'copy', ['vendors']
+gulp.task 'copy', ['assets', 'vendors']
 
 gulp.task 'compile', ['coffee', 'index', 'less', 'templates']
+
+gulp.task 'assets', ['fonts']
+
+gulp.task 'fonts', [], ->
+  gulp.src 'bower_components/font-awesome/fonts/**'
+  .pipe gulp.dest config.web_path + '/fonts/font-awesome'
 
 gulp.task 'vendors', [], ->
   gulp.src(bowerFiles())
