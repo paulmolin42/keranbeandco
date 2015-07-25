@@ -18,12 +18,6 @@ angular.module 'keranbeandco.common'
       $scope.isAddNewsFormOpen = !$scope.isAddNewsFormOpen
     else
       $scope.isAddNewsFormOpen = forceToggle
-    if $scope.isAddNewsFormOpen
-      $scope.addNewsIconStyle =
-        "color": "rgb(244,67,54)"
-    else
-      $scope.addNewsIconStyle =
-        "color": "rgb(63, 81, 181)"
 
   $scope.toggleAddNewsForm(false)
 
