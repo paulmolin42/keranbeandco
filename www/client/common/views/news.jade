@@ -1,4 +1,7 @@
 h2 Les news
-div(ng-repeat="news in allNews")
-   div {{ news.body }}
-   div par {{ news.improvedUser.firstName }} {{ news.improvedUser.lastName }} le {{ news.sentAt | date:'medium' }}
+md-list
+  md-list-item(ng-repeat="news in allNews")
+    md-list-item-text
+      p {{ news.body }}
+      p par {{ news.improvedUser.firstName }} {{ news.improvedUser.lastName }} le {{ news.sentAt | date:'medium' }}
+      md-divider(ng-if="!$last")
