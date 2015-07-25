@@ -1,5 +1,5 @@
 angular.module 'keranbeandco.common'
-.controller 'news', ($scope, News) ->
+.controller 'news', ($scope, News, currentUser) ->
 
   $scope.isAddNewsFormOpen = null
   $scope.newNews = new News
@@ -29,9 +29,12 @@ angular.module 'keranbeandco.common'
 
   $scope.addNews = () ->
     $scope.newNews.sentAt = new Date()
-    News.create $scope.newNews
-    .$promise
-    .then (res) ->
-      $scope.allNews.unshift res
-      $scope.newNews = new News
-      $scope.toggleAddNewsForm(false)
+    currentUser.fetchCurrentUser (currentUser) ->
+      $scope.newNews.improvedUser = currentUser
+      News.create $scope.newNews
+      .$promise
+      .then (res) ->
+        res.improvedUser = currentUser
+        $scope.allNews.unshift res
+        $scope.newNews = new News
+        $scope.toggleAddNewsForm(false)
