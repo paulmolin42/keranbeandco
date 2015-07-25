@@ -1,13 +1,9 @@
 angular.module 'keranbeandco.common'
-.controller 'home', ($scope, $state, ImprovedUser) ->
+.controller 'home', ($scope, $state, currentUser) ->
 
-  ImprovedUser.me()
-  .$promise
-  .then (res) ->
-    $scope.user = res.currentUser
+  currentUser.fetchCurrentUser (currentUser) ->
+    $scope.user = currentUser
 
   $scope.logout = () ->
-    ImprovedUser.logout()
-    .$promise
-    .then () ->
+    currentUser.logout ->
       $state.go 'login'
