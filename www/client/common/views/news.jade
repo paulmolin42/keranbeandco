@@ -1,4 +1,12 @@
 h2 Les news
+h3
+  i.fa.fa-plus.fa-5x(ng-click="toggleAddNewsForm()", ng-style="addNewsIconStyle")
+form(ng-if="isAddNewsFormOpen")
+  md-input-container
+    label Contenu
+    input(type="text", ng-model="newNews.body")
+  md-input-container
+    md-button.md-primary.md-raised(ng-click="addNews()") Ajouter la news
 md-list
   md-list-item(ng-repeat="news in allNews")
     md-list-item-text
