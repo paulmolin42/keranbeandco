@@ -1,0 +1,9 @@
+- name: Creates root directory
+  file: path="/applis/www" state=directory
+  tags:
+  - app-user
+
+- name: Create specific app user
+  user: name=paulmolin state=present home="/applis/paulmolin"
+  tags:
+  - app-user

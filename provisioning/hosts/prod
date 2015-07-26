@@ -1,2 +1,2 @@
 [production]
-paulmolin.fr ansible_connection=ssh ansible_ssh_host=92.222.34.188 ansible_ssh_port=22 ansible_ssh_user=root
+paulmolin.fr ansible_connection=ssh ansible_ssh_host=149.202.45.104 ansible_ssh_port=22 ansible_ssh_user=root
