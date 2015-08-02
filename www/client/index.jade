@@ -8,10 +8,11 @@ html(ng-app="keranbeandco")
             .md-toolbar-tools
                md-button
                   md-icon(md-font-icon="fa-navicon" class="fa fa-2x")
-               h2 La famille Molin
+               h2
+                  a(ui-sref="home") La famille Molin
                span(flex)
-               md-button COOL
-               md-button LOL
+               md-button(ui-sref="news") News
+               md-button(ui-sref="pictures") Photos
          div(ui-view="" layout="column" layout-margin)
       script(src="js/vendor.js")
       script(src="js/app.templates.js")
