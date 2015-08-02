@@ -1,0 +1,2 @@
+- name: create init.d script
+  template: src=node-app.sh dest=/etc/init.d/node-app owner=paulmolin mode=755

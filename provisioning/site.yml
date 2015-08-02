@@ -8,3 +8,4 @@
     - gcc
     - node-modules
     - app-user
+    - node-app
