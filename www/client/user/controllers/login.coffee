@@ -1,5 +1,5 @@
 angular.module 'keranbeandco.user'
-.controller 'login', ($scope, $state, ImprovedUser) ->
+.controller 'login', ($scope, $state, ImprovedUser, $mdToast) ->
 
   $scope.login = ->
     ImprovedUser.login
@@ -15,3 +15,6 @@ angular.module 'keranbeandco.user'
       lastName: $scope.createLastName
       email: $scope.createEmail
       password: $scope.createPassword
+    .$promise
+    .then () ->
+      $mdToast.showSimple 'Le compte a été créé, vous pouvez maintenant vous connecter !'
