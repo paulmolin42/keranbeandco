@@ -40,5 +40,9 @@
   "News": {
     "dataSource": "db",
     "public": true
+  },
+  "container": {
+    "dataSource": "myStorageDataSource",
+    "public": true
   }
 }

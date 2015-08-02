@@ -10,3 +10,8 @@ angular.module 'keranbeandco.common'
     url: '/news'
     controller: 'news'
     templateUrl: 'common/views/news.html'
+
+  .state 'pictures',
+    url: '/pictures'
+    controller: 'pictures'
+    templateUrl: 'common/views/pictures.html'

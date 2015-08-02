@@ -7,5 +7,11 @@
     "name": "db",
     "user": "",
     "connector": "mongodb"
+  },
+  "myStorageDataSource": {
+    "name": "myStorageDataSource",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./server/storage"
   }
 }

@@ -1,0 +1,23 @@
+h2 Les photos
+form
+   md-button.md-primary
+   label(for="file-input") Choisissez une photo
+   input(id="file-input" type="file")
+   md-input-container
+      md-button.md-primary.md-raised(ng-click="uploadPicture()") Ajouter la photo
+md-grid-list(
+   md-cols-sm="1"
+   md-cols-md="2"
+   md-cols-gt-md="6"
+   md-row-height-gt-md="1:1"
+   md-row-height="4:3"
+   md-gutter="8px"
+   md-gutter-gt-sm="4px"
+)
+   md-grid-tile.picture-preview(
+      ng-repeat="picture in pictures"
+      md-rowspan="1"
+      md-colspan="1"
+      md-colspan-sm="1"
+   )
+      img(ng-src="api/containers/{{ picture.container }}/download/{{ picture.name }}")

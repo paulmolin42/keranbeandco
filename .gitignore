@@ -3,5 +3,7 @@
 .vagrant
 
 node_modules
+npm-debug.log
 bower_components
+storage
 web
