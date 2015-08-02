@@ -9,10 +9,8 @@ angular.module 'keranbeandco.common'
       url: 'api/containers/images/upload'
       file: $scope.file
     .success ->
-      console.log 'YOUHOU'
       $scope.loading = false
-    .error (err) ->
-      console.log err
+    .error () ->
       $scope.loading = false
 
   getPictures = () ->
@@ -20,9 +18,6 @@ angular.module 'keranbeandco.common'
       container: 'images'
     .$promise
     .then (res) ->
-      console.log res
       $scope.pictures = res
-    .catch (err) ->
-      console.log err
 
   getPictures()
