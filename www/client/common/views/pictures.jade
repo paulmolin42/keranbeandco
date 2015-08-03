@@ -2,7 +2,7 @@ h2 Les photos
 form
    md-button.md-primary
       label(for="file-input") Choisissez une photo
-   input(id="file-input" type="file")
+   input(id="file-input" type="file" ng-model="file" ngf-select ngf-multiple="false")
    md-input-container
       md-button.md-primary.md-raised(ng-click="uploadPicture()") Ajouter la photo
 md-grid-list(
@@ -20,4 +20,5 @@ md-grid-list(
       md-colspan="1"
       md-colspan-sm="1"
    )
-      img(ng-src="api/containers/{{ picture.container }}/download/{{ picture.name }}")
+      a(href="api/containers/{{ picture.container }}/download/{{ picture.name }}" target="_blank")
+         img(ng-src="api/containers/{{ picture.container }}/download/{{ picture.name }}")
