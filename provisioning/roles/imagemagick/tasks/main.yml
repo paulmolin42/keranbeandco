@@ -1,0 +1,5 @@
+---
+- name: Install Imagemagick
+  apt:
+    state: present
+    pkg: imagemagick
