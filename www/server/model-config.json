@@ -37,6 +37,10 @@
     "dataSource": "db",
     "public": true
   },
+  "File": {
+    "dataSource": "db",
+    "public": true
+  },
   "News": {
     "dataSource": "db",
     "public": true

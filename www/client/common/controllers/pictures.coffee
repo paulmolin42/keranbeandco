@@ -1,12 +1,12 @@
 angular.module 'keranbeandco.common'
-.controller 'pictures', ($scope, Upload, Container) ->
+.controller 'pictures', ($scope, Upload, File) ->
 
   $scope.loading = false
 
   $scope.uploadPicture = () ->
     $scope.loading = true
     Upload.upload
-      url: 'api/containers/images/upload'
+      url: 'api/Files/upload'
       file: $scope.file
     .success ->
       $scope.loading = false
@@ -14,8 +14,7 @@ angular.module 'keranbeandco.common'
       $scope.loading = false
 
   getPictures = () ->
-    Container.getFiles
-      container: 'images'
+    File.find()
     .$promise
     .then (res) ->
       $scope.pictures = res
