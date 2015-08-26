@@ -42,7 +42,7 @@
     "public": true
   },
   "container": {
-    "dataSource": "myStorageDataSource",
+    "dataSource": "storage",
     "public": true
   }
 }

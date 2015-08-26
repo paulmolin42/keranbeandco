@@ -8,10 +8,10 @@
     "user": "",
     "connector": "mongodb"
   },
-  "myStorageDataSource": {
-    "name": "myStorageDataSource",
+  "storage": {
+    "name": "storage",
     "connector": "loopback-component-storage",
     "provider": "filesystem",
-    "root": "./server/storage"
+    "root": "/applis/www/keranbeandco/www/server/storage"
   }
 }
