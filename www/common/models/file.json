@@ -15,6 +15,10 @@
     "url": {
       "type": "string",
       "required": true
+    },
+    "thumbnailUrl": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],

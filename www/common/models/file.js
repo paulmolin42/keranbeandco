@@ -1,4 +1,6 @@
+var gm = require('gm').subClass({imageMagick: true});
 var CONTAINERS_URL = '/api/containers/';
+
 module.exports = function(File) {
 
   File.upload = function (ctx,options,cb) {
@@ -6,19 +8,31 @@ module.exports = function(File) {
     ctx.req.params.container = 'images';
     File.app.models.container.upload(ctx.req,ctx.result,options,function (err,fileObj) {
       if(err) {
-        cb(err);
+        return cb(err);
       } else {
+        if (!fileObj.files.file) {
+          return cb('No file');
+        }
         var fileInfo = fileObj.files.file[0];
         File.create({
           name: fileInfo.name,
           type: fileInfo.type,
           container: fileInfo.container,
+          thumbnailUrl: CONTAINERS_URL+'thumbnails/download/'+fileInfo.name,
           url: CONTAINERS_URL+fileInfo.container+'/download/'+fileInfo.name
-        },function (err,obj) {
+        },function (err,file) {
           if (err !== null) {
             cb(err);
           } else {
-            cb(null, obj);
+            console.log(file);
+            console.log('dirname', __dirname);
+            var thumbnailName = __dirname + '/../../server/storage/' + 'thumbnails' + '/' + file.name;
+            gm(__dirname + '/../../server/storage/' + file.container + '/' + file.name)
+              .thumb('200', '200', thumbnailName, 0, function (err) {
+                if (err) cb(err);
+                console.log('Thumbnailed!');
+                cb(null, file);
+              });
           }
         });
       }

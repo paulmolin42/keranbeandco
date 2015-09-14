@@ -20,5 +20,5 @@ md-grid-list(
       md-colspan="1"
       md-colspan-sm="1"
    )
-      a(href="api/containers/{{ picture.container }}/download/{{ picture.name }}" target="_blank")
-         img(ng-src="api/containers/{{ picture.container }}/download/{{ picture.name }}")
+      a(href="{{ picture.url }}" target="_blank")
+         img(ng-src="{{ picture.thumbnailUrl }}")
